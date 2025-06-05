@@ -1,0 +1,6 @@
+@WorkingWithDatabasesDevCareer_HostAddress = http://localhost:5294
+
+GET {{WorkingWithDatabasesDevCareer_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
