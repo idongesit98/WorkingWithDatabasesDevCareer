@@ -1,16 +1,13 @@
-﻿using Microsoft.EntityFrameworkCore;
-using WorkingWithDatabasesDevCareer.Models;
+using System;
+using Book_Api.Model;
+using Microsoft.EntityFrameworkCore;
 
-namespace WorkingWithDatabasesDevCareer.Data
+namespace Book_Api.Data;
+
+public class LibraryContext : DbContext
 {
-    public class LibraryContext : DbContext
-    {
-        public LibraryContext(DbContextOptions<LibraryContext> options) : base(options)
-        {
+    public LibraryContext(DbContextOptions<LibraryContext> options) : base(options) { }
 
-        }
-
-        public DbSet<Book> Books => Set<Book>();
-      
-    }
+    public DbSet<Book> Books => Set<Book>();
+    public DbSet<User> Users => Set<User>();
 }
