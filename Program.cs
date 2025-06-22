@@ -1,10 +1,10 @@
 ﻿// See https://aka.ms/new-console-template for more information
-using Book_Api.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using WorkingWithDatabasesDevCareer.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 

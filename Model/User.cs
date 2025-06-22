@@ -1,6 +1,6 @@
 using System;
 
-namespace Book_Api.Model;
+namespace WorkingWithDatabasesDevCareer.Model;
 
 public class User
 {

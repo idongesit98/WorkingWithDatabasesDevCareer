@@ -1,7 +1,7 @@
-using Book_Api.Data;
-using Book_Api.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using WorkingWithDatabasesDevCareer.Data;
+using WorkingWithDatabasesDevCareer.Model;
 
 namespace Book_Api.Controller
 {
@@ -24,7 +24,7 @@ namespace Book_Api.Controller
         }
 
 
-        [HttpGet("view/{id:int}")]
+        [HttpGet("view/{id}")]
         public async Task<ActionResult<User>> GetUser(int id)
         {
             var user = await _context.Users.FindAsync(id);
@@ -63,7 +63,7 @@ namespace Book_Api.Controller
             return Ok(existingUser);
         }
         
-        [HttpDelete("delete/{id:int}")]
+        [HttpDelete("delete/{id}")]
         public async Task<ActionResult> DeleteUser(int id)
         {
             var user = await _context.Users.FindAsync(id);

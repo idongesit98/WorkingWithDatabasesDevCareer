@@ -1,10 +1,10 @@
-using Book_Api.Data;
-using Book_Api.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.EntityFrameworkCore;
+using WorkingWithDatabasesDevCareer.Data;
+using WorkingWithDatabasesDevCareer.Model;
 
-namespace Book_Api.Controller
+namespace WorkingWithDatabasesDevCareer.Controller
 {
     [Route("api/books")]
     [ApiController]
@@ -23,7 +23,7 @@ namespace Book_Api.Controller
             return Ok(books);
         }
 
-        [HttpGet("view/{id:int}")]
+        [HttpGet("view/{id}")]
         public async Task<ActionResult<Book>> GetBook(int id)
         {
             var book = await _context.Books.FindAsync(id);
@@ -44,7 +44,7 @@ namespace Book_Api.Controller
             return CreatedAtAction(nameof(GetAllBooks), new { id = book.Id }, book);
         }
 
-        [HttpPut("update/{id:int}")]
+        [HttpPut("update/{id}")]
         public async Task<ActionResult<Book>> UpdateBook(int id, Book book)
         {
             var existingBook = await _context.Books.FindAsync(id);
@@ -64,7 +64,7 @@ namespace Book_Api.Controller
         }
 
 
-        [HttpDelete("delete/{id:int}")]
+        [HttpDelete("delete/{id}")]
         public async Task<ActionResult> DeleteBook(int id)
         {
             var book = await _context.Books.FindAsync(id);

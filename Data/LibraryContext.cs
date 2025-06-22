@@ -1,8 +1,8 @@
 using System;
-using Book_Api.Model;
 using Microsoft.EntityFrameworkCore;
+using WorkingWithDatabasesDevCareer.Model;
 
-namespace Book_Api.Data;
+namespace WorkingWithDatabasesDevCareer.Data;
 
 public class LibraryContext : DbContext
 {
